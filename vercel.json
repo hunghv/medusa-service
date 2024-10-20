@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "buildCommand": "npm i --force && vercel build",
     "builds": [
         {
             "src": "index.js",
