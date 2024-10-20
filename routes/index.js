@@ -1,12 +1,7 @@
 const express = require("express");
+const authRoute = require("./auth.route");
 const router = express.Router();
 
-router.use("/", (req, res) => {
-    res.send("Hunghv2");
-});
-
-router.use("/home", (req, res) => {
-    res.send("home");
-});
+router.use("/auth", authRoute);
 
 module.exports = router;

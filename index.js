@@ -13,10 +13,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/api', route);
 
-app.use("/", (req, res) => {
-    res.send("Hunghv2");
-});
-
 app.listen(port, () => {
     console.log("Server listening on " + port);
 });
