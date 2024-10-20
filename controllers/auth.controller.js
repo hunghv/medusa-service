@@ -9,6 +9,7 @@ const {
 } = require("../config/firebase");
 const User = require("../models/use.model");
 const faker = require("faker");
+const logger = require("molly-logger");
 
 const auth = getAuth();
 
@@ -30,6 +31,7 @@ class FirebaseAuthController {
                         user.email = email;
                         user.save()
                             .then(function () {
+                                logger.info("Verification email sent! User created successfully");
                                 res.status(201).json({
                                     message: "Verification email sent! User created successfully!",
                                 });
@@ -42,12 +44,12 @@ class FirebaseAuthController {
                             });
                     })
                     .catch((error) => {
-                        console.log(error);
+                        logger.error(error);
                         res.status(500).json({ error: "Error sending email verification" });
                     });
             })
             .catch((error) => {
-                console.log(error);
+                logger.error(error);
                 const errorMessage =
                     error.message || "An error occurred while registering user";
                 res.status(500).json({ error: errorMessage });
