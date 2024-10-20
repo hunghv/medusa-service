@@ -1,15 +1,16 @@
 {
     "version": 2,
+    "buildCommand": "npm i --force && vercel build",
     "builds": [
         {
-            "src": "./*",
-            "use": "@vercel/node"
+            "src": "index.js",
+            "use": "@now/node"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/"
+            "dest": "index.js"
         }
     ]
 }
