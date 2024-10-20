@@ -31,7 +31,7 @@ class FirebaseAuthController {
                         user.email = email;
                         user.save()
                             .then(function () {
-                                logger.info("Verification email sent! User created successfully");
+                                logger.info(userCredential);
                                 res.status(201).json({
                                     message: "Verification email sent! User created successfully!",
                                 });
