@@ -19,7 +19,9 @@
     "firebase": "^10.14.0",
     "firebase-admin": "^12.6.0",
     "molly-logger": "^1.0.1",
+    "molly-upload": "^1.0.5",
     "mongoose": "^8.7.0",
+    "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.7"
   }
 }
